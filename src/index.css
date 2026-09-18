@@ -1,0 +1,61 @@
+@import "tailwindcss";
+
+@theme {
+  --color-forest-950: #0B2E1F;
+  --color-forest-700: #1B5E3A;
+  --color-forest-500: #2E7D4F;
+  --color-sage-200: #C9DCC7;
+  --color-cream-50: #FAF7F0;
+  --color-cream-100: #F1ECE0;
+  --color-amber-500: #DB7F1E;
+  --color-ink-900: #1C1B17;
+  --color-ink-500: #5B5A54;
+
+  --font-serif: 'Fraunces', Georgia, serif;
+  --font-sans: 'IBM Plex Sans', system-ui, -apple-system, sans-serif;
+
+  --shadow-card: 0 2px 14px rgba(11, 46, 31, 0.05);
+  --shadow-card-hover: 0 10px 30px rgba(11, 46, 31, 0.08);
+  --shadow-subtle: 0 1px 4px rgba(11, 46, 31, 0.04);
+}
+
+@layer base {
+  html {
+    font-family: 'IBM Plex Sans', system-ui, -apple-system, sans-serif;
+    color: #1C1B17;
+    background-color: #FAF7F0;
+    scroll-behavior: smooth;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: 'Fraunces', Georgia, serif;
+    font-optical-sizing: auto;
+  }
+}
+
+/* Shimmer animation keyframes for premium button aura */
+@keyframes shimmerSweep {
+  0% {
+    transform: translateX(-100%) skewX(-15deg);
+  }
+  100% {
+    transform: translateX(200%) skewX(-15deg);
+  }
+}
+
+.animate-shimmer {
+  animation: shimmerSweep 3.5s infinite cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-elevation {
+  background-color: #F1ECE0;
+  box-shadow: 0 2px 12px rgba(11, 46, 31, 0.05);
+}
+
+.card-elevation-hover {
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s ease;
+}
+.card-elevation-hover:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 28px rgba(11, 46, 31, 0.08);
+}
